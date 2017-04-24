@@ -1,0 +1,13 @@
+name: kemal_youtube_retiever
+version: 0.1.0
+
+authors:
+  - akiicat <aaaa1379@gmail.com>
+
+targets:
+  kemal_youtube_retiever:
+    main: src/kemal_youtube_retiever.cr
+
+crystal: 0.22.0
+
+license: MIT

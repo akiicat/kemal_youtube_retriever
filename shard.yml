@@ -8,6 +8,14 @@ targets:
   kemal_youtube_retiever:
     main: src/kemal_youtube_retiever.cr
 
+dependencies:
+  youtube_retriever:
+    github: akiicat/youtube_retriever
+    branch: master
+  kemal:
+    github: kemalcr/kemal
+    branch: master
+
 crystal: 0.22.0
 
 license: MIT

@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe KemalYoutubeRetiever do
+describe KemalYoutubeRetriever do
   # TODO: Write tests
 
   it "works" do

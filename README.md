@@ -1,4 +1,4 @@
-# kemal_youtube_retiever
+# kemal_youtube_retriever
 
 TODO: Write a description here
 
@@ -16,12 +16,8 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/kemal_youtube_retiever/fork )
+1. Fork it ( https://github.com/akiicat/kemal_youtube_retriever/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
 5. Create a new Pull Request
-
-## Contributors
-
-- [[your-github-name]](https://github.com/[your-github-name]) akiicat - creator, maintainer

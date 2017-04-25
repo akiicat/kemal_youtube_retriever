@@ -1,12 +1,12 @@
-name: kemal_youtube_retiever
+name: kemal_youtube_retriever
 version: 0.1.0
 
 authors:
   - akiicat <aaaa1379@gmail.com>
 
 targets:
-  kemal_youtube_retiever:
-    main: src/kemal_youtube_retiever.cr
+  kemal_youtube_retriever:
+    main: src/kemal_youtube_retriever.cr
 
 dependencies:
   youtube_retriever:

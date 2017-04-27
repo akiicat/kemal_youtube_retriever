@@ -1,6 +1,80 @@
 * {
   padding: 0;
   margin: 0;
+  list-style:none;
+  font-family: helvetica;
 }
 
+/*
+  #1cb09d;
+  #006570;
+  #a5f96e;
+  #007f6a;
+*/
 
+@font-face {
+  font-family: '8-bit-pusab';
+  src: url('/fonts/8-bit-pusab/8-bit-pusab.ttf');
+}
+
+span {
+  padding-left: 3px;
+}
+
+hr {
+  border: 2px solid #1cb09d;
+}
+
+.container {
+  position: relative;
+  margin: 20px auto;
+  left: 0; right: 0;
+}
+
+.font-8-bit {
+  font-family: '8-bit-pusab';
+}
+
+.text-center {
+  text-align: center;
+  margin: 20px auto;
+}
+
+#youtube-retriever {
+  width: 100%;
+}
+
+#response-content {
+}
+
+#url-input input {
+  width: 350px;
+  font-size: 16px;
+}
+
+#url-input button {
+  width: 100px;
+  height: 22px;
+  font-size: 16px;
+  background-color: white;
+  margin: 10px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+
+#response-content {
+  position: absolute;
+  margin: auto;
+  left: 0; right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 500px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 500px;
+  }
+}

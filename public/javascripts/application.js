@@ -49,15 +49,43 @@ class YoutubeRetriever extends React.Component {
   }
 
   renderStreams(streams, selector) {
-    return streams.filter((stream) => {
+    let titles = ["", "container"]
+    if (selector != 'audio only') { titles.push("video resolution") }
+    if (selector != 'video only') { titles.push("audio encoding") }
+
+    streams = streams.filter((stream) => {
       return stream.comment == selector
-    }).map((stream) => {
-      return React.createElement('li', {},
+    })
+
+    selector = (selector == "default") ? 'VIDEO + AUDIO' : selector.toUpperCase();
+
+    return React.createElement('div', {},
+      React.createElement('h2', { className: 'text-center' }, selector),
+      React.createElement('table', {},
+        React.createElement('thead', {}, this.renderStreamsHead(titles)),
+        React.createElement('tbody', {}, this.renderStreamsBody(streams))
+      )
+    )
+  }
+
+  renderStreamsHead(titles) {
+    return React.createElement('tr', {},
+      titles.map((title) => {
+        return React.createElement('th', {}, title)
+      })
+    )
+  }
+
+  renderStreamsBody(streams) {
+    return streams.map((stream) => {
+      return React.createElement('tr', {},
         // url, itag, container, video_resolution, video_profile, video_bitrate, video_encoding, audio_bitrate, audio_encoding, comment
-        React.createElement('a', { href: stream.url, target: '_blank' }, 'Download'),
-        React.createElement('span', {}, stream.container),
-        React.createElement('span', {}, stream.video_resolution),
-        React.createElement('span', {}, stream.audio_encoding)
+        React.createElement('td', {},
+          React.createElement('a', { href: stream.url, target: '_blank' }, 'Download')
+        ),
+        React.createElement('td', {}, stream.container),
+        React.createElement('td', {}, stream.video_resolution || stream.audio_encoding),
+        React.createElement('td', {}, (stream.video_resolution) ? stream.audio_encoding : null)
       )
     })
   }
@@ -74,16 +102,12 @@ class YoutubeRetriever extends React.Component {
       React.createElement('hr', {}, null),
       React.createElement('div', { id: 'response-content' },
         React.createElement('div', { className: 'text-center' },
-          React.createElement('div', {}, this.state.title ),
-          React.createElement('div', {}, this.state.author ),
-          React.createElement('div', {}, this.state.length )
+          React.createElement('div', { className: 'title' }, this.state.title ),
+          React.createElement('div', { className: 'title' }, this.state.author ),
+          React.createElement('div', { className: 'title' }, this.state.length )
         ),
         React.createElement('div', { className: 'container' }, this.state.streams),
-        React.createElement('hr', {}, null),
-        React.createElement('div', { className: 'text-center' }, 'video only'),
         React.createElement('div', { className: 'container' }, this.state.video_only),
-        React.createElement('hr', {}, null),
-        React.createElement('div', { className: 'text-center' }, 'music only'),
         React.createElement('div', { className: 'container' }, this.state.audio_only)
       )
     );

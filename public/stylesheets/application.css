@@ -1,6 +1,109 @@
 * {
   padding: 0;
   margin: 0;
+  list-style:none;
+  font-family: helvetica;
 }
 
+@font-face {
+  font-family: '8-bit-pusab';
+  src: url('/fonts/8-bit-pusab/8-bit-pusab.ttf');
+}
 
+span {
+  padding-left: 3px;
+}
+
+hr {
+  border: 2px solid #1cb09d;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: '8-bit-pusab';
+}
+
+h1, h2, h3, h4, h5, h6, div, p, table, a {
+  color: #cefe74;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+body {
+  background-color: #006570;
+}
+
+header {
+  padding: 20px 0;
+  background-color: #007f6a;
+}
+
+input, button {
+  height: 32px;
+  border: 1px solid #cefe74;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  width: 25%;
+}
+
+.container {
+  position: relative;
+  margin: 20px auto;
+  left: 0; right: 0;
+}
+
+.text-center {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.title {
+  font-family: helvetica;
+}
+
+#response-content table, #response-content a {
+  text-align: center;
+  color: white;
+}
+
+#url-input input {
+  width: 350px;
+  padding-left: 4px;
+}
+
+#url-input button {
+  width: 100px; margin: 10px;
+  background-color: #006570;
+  color: #cefe74;
+}
+
+#response-content {
+  position: absolute;
+  margin: auto;
+  left: 0; right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 500px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 500px;
+  }
+}

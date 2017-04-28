@@ -27,8 +27,12 @@ h1, h2, h3, h4, h5, h6, div, p, table, a {
 }
 
 a {
-  font-weight: bold;
   text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 body {
@@ -47,6 +51,14 @@ input, button {
   font-size: 16px;
 }
 
+table {
+  width: 100%;
+}
+
+td {
+  width: 25%;
+}
+
 .container {
   position: relative;
   margin: 20px auto;
@@ -63,7 +75,7 @@ input, button {
 }
 
 #response-content table, #response-content a {
-  text-align: right;
+  text-align: center;
   color: white;
 }
 

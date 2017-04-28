@@ -2,7 +2,7 @@ class YoutubeRetriever extends React.Component {
   constructor(props){
     super(props);
     this.state = {};
-    this.video = {}
+    this.video = {};
   }
 
   getVideoId() {
@@ -49,10 +49,6 @@ class YoutubeRetriever extends React.Component {
   }
 
   renderStreams(streams, selector) {
-    let titles = ["", "container"]
-    if (selector != 'audio only') { titles.push("video resolution") }
-    if (selector != 'video only') { titles.push("audio encoding") }
-
     streams = streams.filter((stream) => {
       return stream.comment == selector
     })
@@ -60,19 +56,11 @@ class YoutubeRetriever extends React.Component {
     selector = (selector == "default") ? 'VIDEO + AUDIO' : selector.toUpperCase();
 
     return React.createElement('div', {},
+      React.createElement('hr', {}, null),
       React.createElement('h2', { className: 'text-center' }, selector),
       React.createElement('table', {},
-        React.createElement('thead', {}, this.renderStreamsHead(titles)),
         React.createElement('tbody', {}, this.renderStreamsBody(streams))
       )
-    )
-  }
-
-  renderStreamsHead(titles) {
-    return React.createElement('tr', {},
-      titles.map((title) => {
-        return React.createElement('th', {}, title)
-      })
     )
   }
 
@@ -84,8 +72,8 @@ class YoutubeRetriever extends React.Component {
           React.createElement('a', { href: stream.url, target: '_blank' }, 'Download')
         ),
         React.createElement('td', {}, stream.container),
-        React.createElement('td', {}, stream.video_resolution || stream.audio_encoding),
-        React.createElement('td', {}, (stream.video_resolution) ? stream.audio_encoding : null)
+        React.createElement('td', {}, stream.video_resolution),
+        React.createElement('td', {}, stream.audio_encoding)
       )
     })
   }

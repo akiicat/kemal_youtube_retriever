@@ -38,7 +38,7 @@ class YoutubeRetriever extends React.Component {
     };
 
     this.getVideoId()
-    xhr.open('GET', '/watch?v=' + this.video.id,  true);
+    xhr.open('GET', '/api/v1/watch?v=' + this.video.id,  true);
     xhr.send();
   }
 

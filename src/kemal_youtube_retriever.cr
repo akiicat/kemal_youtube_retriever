@@ -10,7 +10,7 @@ get "/" do |env|
   render "src/views/index.ecr"
 end
 
-get "/watch" do |env|
+get "/api/v1/watch" do |env|
   env.response.content_type = "application/json; charset=utf-8"
   begin
     request = env.request.resource.match(/\?(?<video_url>.+)/).try(&.["video_url"]).to_s
@@ -21,7 +21,7 @@ get "/watch" do |env|
   end
 end
 
-get "/youtube-dl" do |env|
+get "/api/v1/youtube-dl" do |env|
   env.response.content_type = "application/json; charset=utf-8"
   begin
     request = env.request.resource.match(/\?(?<video_url>.+)/).try(&.["video_url"]).to_s

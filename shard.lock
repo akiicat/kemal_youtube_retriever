@@ -14,5 +14,5 @@ shards:
 
   youtube_retriever:
     github: akiicat/youtube_retriever
-    commit: 81e216fa5b780767d313a12a5e64fac1f1fd7368
+    commit: 044c938b6223faee4e7abd1fe5a37cdde9948821
 

@@ -24,13 +24,20 @@ class YoutubeRetriever extends React.Component {
     xhr.onreadystatechange = () => {
       if (xhr.readyState == 4 && xhr.status == 200) {
         var rsp = JSON.parse(xhr.responseText)
-        this.state.title = rsp.title
-        this.state.author = rsp.author
+
+        if (rsp.status == "404" || rsp.author == "") {
+          this.state.error = this.renderError()
+          this.forceUpdate()
+          return false
+        }
 
         var date = new Date(null);
         date.setSeconds(rsp.length_seconds);
+        this.state.error = null
+        this.state.title = rsp.title
+        this.state.author = rsp.author
         this.state.length = date.toISOString().substr(11, 8);
-        this.state.streams    = this.renderStreams(rsp.streams, "default")
+        this.state.streams = this.renderStreams(rsp.streams, "default")
         this.state.video_only = this.renderStreams(rsp.streams, "video only")
         this.state.audio_only = this.renderStreams(rsp.streams, "audio only")
         this.forceUpdate()
@@ -46,6 +53,12 @@ class YoutubeRetriever extends React.Component {
     if (e.keyCode == 13) {
       this.sendVideoUrl();
     }
+  }
+
+  renderError() {
+    return React.createElement('div', { className: 'paragraph' },
+      React.createElement('h4', { className: 'text-center' }, "Something Wrong" )
+    )
   }
 
   renderStreams(streams, selector) {
@@ -89,10 +102,11 @@ class YoutubeRetriever extends React.Component {
       ),
       React.createElement('hr', {}, null),
       React.createElement('div', { id: 'response-content' },
-        React.createElement('div', { className: 'text-center' },
-          React.createElement('div', { className: 'title' }, this.state.title ),
-          React.createElement('div', { className: 'title' }, this.state.author ),
-          React.createElement('div', { className: 'title' }, this.state.length )
+        this.state.error,
+        React.createElement('div', { className: 'paragraph' },
+          React.createElement('div', { className: 'text-center title' }, this.state.title ),
+          React.createElement('div', { className: 'text-center title' }, this.state.author ),
+          React.createElement('div', { className: 'text-center title' }, this.state.length )
         ),
         React.createElement('div', { className: 'container' }, this.state.streams),
         React.createElement('div', { className: 'container' }, this.state.video_only),

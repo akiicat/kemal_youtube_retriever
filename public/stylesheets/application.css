@@ -67,7 +67,10 @@ td {
 
 .text-center {
   text-align: center;
-  margin: 20px auto;
+}
+
+.paragraph {
+  padding: 20px 0;
 }
 
 .title {

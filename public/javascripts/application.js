@@ -82,13 +82,19 @@ class YoutubeRetriever extends React.Component {
       return React.createElement('tr', {},
         // url, itag, container, video_resolution, video_profile, video_bitrate, video_encoding, audio_bitrate, audio_encoding, comment
         React.createElement('td', {},
-          React.createElement('a', { href: stream.url, target: '_blank' }, 'Download')
+          React.createElement('a', { href: stream.url + '&title=' + this.state.title, target: '_blank' }, 'Download')
         ),
         React.createElement('td', {}, stream.container),
         React.createElement('td', {}, stream.video_resolution),
         React.createElement('td', {}, stream.audio_encoding)
       )
     })
+  }
+
+  renderIcon(icon, link) {
+    return React.createElement('a', { href: link },
+      React.createElement('img', { className: 'icon', src: '/images/' + icon}, null)
+    )
   }
 
   render() {
@@ -111,6 +117,11 @@ class YoutubeRetriever extends React.Component {
         React.createElement('div', { className: 'container' }, this.state.streams),
         React.createElement('div', { className: 'container' }, this.state.video_only),
         React.createElement('div', { className: 'container' }, this.state.audio_only)
+      ),
+      React.createElement('footer', {},
+        React.createElement('div', { className: 'container text-center' },
+          this.renderIcon('GitHub-Mark-Light-120px-plus.png', '//github.com/akiicat/youtube_retriever')
+        )
       )
     );
   }

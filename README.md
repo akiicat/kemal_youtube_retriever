@@ -1,14 +1,27 @@
 # kemal_youtube_retriever
 
-TODO: Write a description here
+Using
+
+- [Youtube Retriever](https://github.com/akiicat/youtube_retriever)
+- [Kemal](https://github.com/kemalcr/kemal)
 
 ## Installation
 
-TODO: Write installation instructions here
+- [Install Crystal](https://crystal-lang.org/docs/installation/)
+
+Install dependency package
+
+```
+crystal deps
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Run Server
+
+```
+crystal src/kemal_youtube_retriever.cr
+```
 
 ## Development
 

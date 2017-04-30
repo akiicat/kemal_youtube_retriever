@@ -82,7 +82,7 @@ class YoutubeRetriever extends React.Component {
       return React.createElement('tr', {},
         // url, itag, container, video_resolution, video_profile, video_bitrate, video_encoding, audio_bitrate, audio_encoding, comment
         React.createElement('td', {},
-          React.createElement('a', { href: stream.url, target: '_blank' }, 'Download')
+          React.createElement('a', { href: stream.url + '&title=' + this.state.title, target: '_blank' }, 'Download')
         ),
         React.createElement('td', {}, stream.container),
         React.createElement('td', {}, stream.video_resolution),

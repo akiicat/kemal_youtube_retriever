@@ -91,6 +91,12 @@ class YoutubeRetriever extends React.Component {
     })
   }
 
+  renderIcon(icon, link) {
+    return React.createElement('a', { href: link },
+      React.createElement('img', { className: 'icon', src: '/images/' + icon}, null)
+    )
+  }
+
   render() {
     return React.createElement('div', {},
       React.createElement('header', {},
@@ -111,6 +117,11 @@ class YoutubeRetriever extends React.Component {
         React.createElement('div', { className: 'container' }, this.state.streams),
         React.createElement('div', { className: 'container' }, this.state.video_only),
         React.createElement('div', { className: 'container' }, this.state.audio_only)
+      ),
+      React.createElement('footer', {},
+        React.createElement('div', { className: 'container text-center' },
+          this.renderIcon('GitHub-Mark-Light-120px-plus.png', '//github.com/akiicat/youtube_retriever')
+        )
       )
     );
   }

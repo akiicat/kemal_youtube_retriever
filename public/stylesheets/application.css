@@ -6,8 +6,8 @@
 }
 
 @font-face {
-  font-family: '8-bit-pusab';
-  src: url('/fonts/8-bit-pusab/8-bit-pusab.ttf');
+  font-family: 'PressStart2P-Regular';
+  src: url('/fonts/PressStart2P/PressStart2P-Regular.ttf');
 }
 
 span {
@@ -19,11 +19,15 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: '8-bit-pusab';
+  font-family: 'PressStart2P-Regular';
 }
 
 h1, h2, h3, h4, h5, h6, div, p, table, a {
   color: #cefe74;
+}
+
+h1, h2 {
+  padding: 20px 0;
 }
 
 a {

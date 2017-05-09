@@ -1,1 +1,3 @@
 language: crystal
+script:
+  - KEMAL_ENV=test crystal spec

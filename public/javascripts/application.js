@@ -45,7 +45,7 @@ class YoutubeRetriever extends React.Component {
     };
 
     this.getVideoId()
-    xhr.open('GET', '/api/v1/watch?v=' + this.video.id,  true);
+    xhr.open('GET', '/api/v1/json/watch?v=' + this.video.id,  true);
     xhr.send();
   }
 
@@ -120,7 +120,7 @@ class YoutubeRetriever extends React.Component {
       ),
       React.createElement('footer', {},
         React.createElement('div', { className: 'container text-center' },
-          this.renderIcon('GitHub-Mark-Light-120px-plus.png', '//github.com/akiicat/youtube_retriever')
+          this.renderIcon('GitHub-Mark-Light-120px-plus.png', '//github.com/akiicat/kemal_youtube_retriever')
         )
       )
     );

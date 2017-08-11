@@ -2,11 +2,11 @@ version: 1.0
 shards:
   kemal:
     github: kemalcr/kemal
-    commit: ce9e924d00d07bf9ca7184a41bc81579da0122ec
+    commit: fc4c97aafd9aa8aa0fe2f112dd8af9f47777b1c9
 
   kilt:
     github: jeromegn/kilt
-    version: 0.3.3
+    version: 0.4.0
 
   radix:
     github: luislavena/radix
@@ -19,3 +19,4 @@ shards:
   youtube_retriever:
     github: akiicat/youtube_retriever
     version: 0.3.0
+

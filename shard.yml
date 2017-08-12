@@ -1,5 +1,5 @@
 name: kemal_youtube_retriever
-version: 0.2.0
+version: 1.0.0
 
 authors:
   - akiicat <aaaa1379@gmail.com>
@@ -11,7 +11,7 @@ targets:
 dependencies:
   youtube_retriever:
     github: akiicat/youtube_retriever
-    version: ~> 1.0.0
+    branch: master
   kemal:
     github: kemalcr/kemal
     branch: master
@@ -19,6 +19,6 @@ dependencies:
     github: kemalcr/spec-kemal
     branch: master
 
-crystal: 0.22.0
+crystal: 0.23.1
 
 license: MIT

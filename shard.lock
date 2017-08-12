@@ -18,5 +18,5 @@ shards:
 
   youtube_retriever:
     github: akiicat/youtube_retriever
-    version: 0.3.0
+    version: 1.0.0
 

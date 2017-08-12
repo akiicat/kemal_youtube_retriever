@@ -3,9 +3,6 @@
     <title>Youtube Retriever</title>
     <meta charset="utf-8">
     <meta name="keywords" content="youtube, download, retriever">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/application.css">
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -22,7 +19,27 @@
     </script>
   </head>
   <body>
-    <div id="youtube-retriever"></div>
+
+    <div id="youtube">
+      <header>
+        <h1>YOUTUBE RETRIEVER</h1>
+        <div>
+          <input type="text" placeholder="Youtube 影片連結" v-model="url" @key.enter="send">
+          <button type="button" @click="send">RETRIEVE</button>
+        </div>
+      </header>
+
+      <div v-if="video.title">
+        <streams-detail :video="video"></streams-detail>
+
+        <streams-content :streams="this.getStreams()" title="VIDEO + AUDIO"></streams-content>
+        <streams-content :streams="this.getStreams('video only')" title="VIDEO ONLY"></streams-content>
+        <streams-content :streams="this.getStreams('audio only')" title="AUDIO ONLY"></streams-content>
+      </div>
+
+      <github-footer :github_url="github_url"></github-footer>
+    </div>
+
     <script src="/javascripts/application.js"></script>
   </body>
 </html>

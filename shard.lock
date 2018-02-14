@@ -2,7 +2,7 @@ version: 1.0
 shards:
   kemal:
     github: kemalcr/kemal
-    commit: fc4c97aafd9aa8aa0fe2f112dd8af9f47777b1c9
+    commit: 50f82f51874babe92cbb808013647a7989d54354
 
   kilt:
     github: jeromegn/kilt
@@ -14,9 +14,9 @@ shards:
 
   spec-kemal:
     github: kemalcr/spec-kemal
-    commit: 05cc810f5f5ed890f16bcb06461000b97c625959
+    commit: 93ab608228ea6619d15555d1c77a3bcff29f1dba
 
   youtube_retriever:
     github: akiicat/youtube_retriever
-    commit: 78d15729cdfaad2210c7a95ac546d643536d8c2e
+    commit: 718083928057d3daf80cd44bcebce2f38ca4a7de
 
